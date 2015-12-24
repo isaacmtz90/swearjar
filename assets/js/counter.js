@@ -8,9 +8,19 @@ $(document).ready(function () {
 
 
 
+    var changeStext = function (opt){
+        if (opt==='xmas'){
+             $('#s_text').text("Merry X-mas my dear :) te amo... gracias por todo lo que es, y todo lo que me hace ser... Desearia estar ahi para abrazarte y besarte mucho, pero ya tendremos mucho tiempo para eso. Espero le guste su regalo... (penita face) (#esperomifotodedolliesoloconchongo)");
+        }
+         if (opt==='hella'){
+             $('#s_text').text("hey hey, stop swearing >:(");
+        }
+       
+        
+    };
+  
 
-
-
+    
     var updateBoard = function () {
 
         moneyDataRef.child('dollie').on('value', function (snapshot) {
@@ -47,5 +57,7 @@ $(document).ready(function () {
         add_to('bunny');
     });
     updateBoard();
+    Mousetrap.bind('x m a s', function() { console.log('secret command!'); changeStext('xmas'); });
+    Mousetrap.bind('h e l l a', function() { console.log('secret command!'); changeStext('hella'); });
 
 });

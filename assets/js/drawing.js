@@ -1,6 +1,6 @@
   $(document).ready(function () {
     //Set up some globals
-    var pixSize = 8, lastPoint = null, currentColor = "000", mouseDown = 0;
+    var pixSize = 2, lastPoint = null, currentColor = "000", mouseDown = 0;
 
     //Create a reference to the pixel data for our drawing.
     var pixelDataRef = new Firebase('https://swearjarme.firebaseio.com/wall');
@@ -10,6 +10,8 @@
     var myContext = myCanvas.getContext ? myCanvas.getContext('2d') : null;
 
      $('#drawing-canvas').css('background-color', 'rgba(158, 167, 184, 0.7)');
+       $('#drawing-canvas').css('style', 'width:100%; height:100%');
+      
     if (myContext == null) {
       alert("You must use a browser that supports HTML5 Canvas to run this demo.");
       return;
